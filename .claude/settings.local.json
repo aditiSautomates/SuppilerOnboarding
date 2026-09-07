@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:Path = \"C:\\\\Program Files\\\\nodejs;$env:APPDATA\\\\npm;$env:Path\"; cd \"c:\\\\Users\\\\Aditi Semwal\\\\Downloads\\\\Test\\\\MyProject\"; uip --version; \"---AUTH---\"; uip auth status --output json 2>&1 | Out-String)"
+    ]
+  }
+}

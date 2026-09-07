@@ -1,0 +1,22 @@
+{
+  "docVersion": "1.0",
+  "tenants": [
+    {
+      "tenantKey": "b54f43f3-3e16-4c0e-a0db-cff24d8d4338",
+      "resources": [
+        {
+          "solutionResourceKey": "a163e374-aaac-4381-bd40-09041b7fb8d8",
+          "overwrite": {
+            "resourceKey": "a163e374-aaac-4381-bd40-09041b7fb8d8",
+            "resourceName": "aditiautomates@gmail.com",
+            "type": "Reference",
+            "kind": "connection",
+            "folderFullyQualifiedName": "Shared",
+            "folderKey": "07b2805c-c0a8-43c6-b20b-65ba9273e11f",
+            "folderPath": "07b2805c-c0a8-43c6-b20b-65ba9273e11f"
+          }
+        }
+      ]
+    }
+  ]
+}

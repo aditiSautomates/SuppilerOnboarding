@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "schemaVersion": 4,
+  "id": "eval-set-001",
+  "name": "Dataset",
+  "evaluatorRefs": [
+    "llm-judge-trajectory-evaluator"
+  ],
+  "evaluations": [
+    {
+      "id": "4cc641b2-de9f-45cd-b48e-eaf06cb3750d",
+      "name": "Trace Run 1",
+      "inputs": {},
+      "expectedOutput": {},
+      "evaluationCriterias": {
+        "llm-judge-trajectory-eval-001": {
+          "expectedAgentBehavior": "The flow should follow the captured successful path and complete with the expected result."
+        }
+      },
+      "createdAt": "2026-09-02T13:16:38.225Z",
+      "updatedAt": "2026-09-02T13:16:38.225Z"
+    }
+  ],
+  "fileName": "evaluation-set.json",
+  "createdAt": "2026-08-31T17:44:48.339Z",
+  "updatedAt": "2026-09-02T13:16:38.225Z",
+  "target": {
+    "kind": "flow",
+    "entrypoint": "start"
+  },
+  "nodeEval": false,
+  "selectedEntrypoint": "start"
+}

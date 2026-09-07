@@ -1,0 +1,23 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SupplierOnboarding_MaestroFlow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "9cdede54-8036-477c-be56-763561c704d1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "SupplierOnboarding_MaestroFlow"
+    },
+    "locks": [],
+    "key": "6091e2a2-f7bf-479c-a0bf-6df7b92ef3dd",
+    "files": []
+  }
+}

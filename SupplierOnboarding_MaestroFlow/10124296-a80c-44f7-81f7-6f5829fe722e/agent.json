@@ -1,0 +1,67 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "anthropic.claude-sonnet-5",
+    "maxTokens": 16384,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "autonomousAgent1__output__content": {
+        "description": "Bound from $vars.autonomousAgent1.output.content"
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string"
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "guardrails": [],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a Procurement Automation Agent.\r\n\r\nThe supplier request has already been determined to be within the automatic approval threshold.\r\n\r\nExtract the supplier information provided in the user prompt.\r\n\r\nReturn ONLY:\r\nSupplier Name\r\nSupplier Type\r\nAnnual Spend\r\nPayment Terms\r\n\r\nDo not return JSON.\r\nDo not add explanations or additional text.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are a Procurement Automation Agent.\r\n\r\nThe supplier request has already been determined to be within the automatic approval threshold.\r\n\r\nExtract the supplier information provided in the user prompt.\r\n\r\nReturn ONLY:\r\nSupplier Name\r\nSupplier Type\r\nAnnual Spend\r\nPayment Terms\r\n\r\nDo not return JSON.\r\nDo not add explanations or additional text."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Supplier information from the previous agent:\r\n\r\n{{input.autonomousAgent1__output__content}}\r\n\r\nExtract the following details:\r\n\r\nSupplier Name\r\nSupplier Type\r\nAnnual Spend\r\nPayment Terms\r\n\r\nReturn ONLY in this format:\r\n\r\nSupplier Name: [value]\r\nSupplier Type: [value]\r\nAnnual Spend: [value]\r\nPayment Terms: [value]",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Supplier information from the previous agent:\r\n\r\n"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.autonomousAgent1__output__content"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "\r\n\r\nExtract the following details:\r\n\r\nSupplier Name\r\nSupplier Type\r\nAnnual Spend\r\nPayment Terms\r\n\r\nReturn ONLY in this format:\r\n\r\nSupplier Name: [value]\r\nSupplier Type: [value]\r\nAnnual Spend: [value]\r\nPayment Terms: [value]"
+        }
+      ]
+    }
+  ],
+  "projectId": "10124296-a80c-44f7-81f7-6f5829fe722e",
+  "id": "10124296-a80c-44f7-81f7-6f5829fe722e",
+  "name": "AutoApprove request analyzer"
+}

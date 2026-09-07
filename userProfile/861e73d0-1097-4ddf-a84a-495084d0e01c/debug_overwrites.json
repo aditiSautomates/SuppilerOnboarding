@@ -1,0 +1,22 @@
+{
+  "docVersion": "1.0",
+  "tenants": [
+    {
+      "tenantKey": "3ccb21dd-4c96-4771-9f10-fef698bea2db",
+      "resources": [
+        {
+          "solutionResourceKey": "7101e480-9768-48a8-b678-e32c7d657185",
+          "overwrite": {
+            "resourceKey": "7101e480-9768-48a8-b678-e32c7d657185",
+            "resourceName": "aditismwl@gmail.com",
+            "type": "Reference",
+            "kind": "connection",
+            "folderFullyQualifiedName": "aditismwl@gmail.com's workspace",
+            "folderKey": "c59feee0-aab0-4419-8cea-f6c3ca24d838",
+            "folderPath": "28cbfc20-ead8-4041-8c48-b51df7a7bfea.c59feee0-aab0-4419-8cea-f6c3ca24d838"
+          }
+        }
+      ]
+    }
+  ]
+}

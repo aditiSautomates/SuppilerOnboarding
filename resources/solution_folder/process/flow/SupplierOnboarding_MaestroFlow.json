@@ -1,0 +1,40 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SupplierOnboarding_MaestroFlow",
+    "kind": "process",
+    "type": "flow",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "9cdede54-8036-477c-be56-763561c704d1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "kind": "package",
+        "name": "SupplierOnboarding_MaestroFlow"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "runtimeProfile": "Standard",
+      "type": "Flow",
+      "name": "SupplierOnboarding_MaestroFlow",
+      "package": {
+        "key": "6091e2a2-f7bf-479c-a0bf-6df7b92ef3dd"
+      },
+      "packageName": "SupplierOnboarding_MaestroFlow",
+      "targetFrameworkValue": "Portable",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180
+    },
+    "locks": [],
+    "key": "78a202bd-1f56-421a-81a4-139c9855a81c",
+    "files": []
+  }
+}

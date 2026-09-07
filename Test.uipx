@@ -1,0 +1,12 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.10.0",
+  "SolutionId": "fbc5df40-e7dd-4e75-9ad6-51070054f27f",
+  "Projects": [
+    {
+      "Type": "Flow",
+      "ProjectRelativePath": "SupplierOnboarding_MaestroFlow/project.uiproj",
+      "Id": "9cdede54-8036-477c-be56-763561c704d1"
+    }
+  ]
+}

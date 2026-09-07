@@ -1,0 +1,64 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "anthropic.claude-sonnet-5",
+    "maxTokens": 16384,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "getNewestEmail1__output__Body": {
+        "description": "Bound from $vars.getNewestEmail1.output.Body"
+      }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string",
+        "description": "{\r\n  \"supplierName\": \"string\",\r\n  \"supplierType\": \"string\",\r\n  \"primaryContact\": \"string\",\r\n  \"serviceDescription\": \"string\",\r\n  \"estimatedAnnualSpend\": \"number\",\r\n  \"currency\": \"string\",\r\n  \"paymentTerms\": \"string\",\r\n  \"requestedOnboardingDate\": \"string\",\r\n  \"requesterName\": \"string\",\r\n  \"mandatoryInformationComplete\": \"boolean\",\r\n  \"missingInformation\": \"array\"\r\n}"
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "guardrails": [],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an enterprise Supplier Onboarding Agent.\r\n\r\nYour responsibility is to analyze an unstructured supplier onboarding request received through email and convert it into structured supplier information.\r\n\r\nExtract the following information:\r\n\r\n- Supplier Name\r\n- Supplier Type\r\n- Primary Contact\r\n- Service Description\r\n- Estimated Annual Spend\r\n- Currency\r\n- Payment Terms\r\n- Requested Onboarding Date\r\n- Requester Name\r\n\r\nAlso determine whether all mandatory information required to initiate supplier onboarding is available.\r\n\r\nMandatory information:\r\n1. Supplier Name\r\n2. Supplier Type or Service Description\r\n3. Primary Contact\r\n4. Estimated Annual Spend\r\n5. Currency\r\n6. Payment Terms\r\n7. Requester\r\n\r\nRules:\r\n- Do not invent information.\r\n- If information is missing, return null.\r\n- Identify missing mandatory fields.\r\n- Return structured output.\n\nReturn ONLY a valid JSON object.\n\nDo not include:\n- Markdown\n- ```json\n- Explanations\n- Introductory text\n- Any text before or after the JSON\n\nUse exactly this structure:\n\n{\n  \"supplierName\": \"\",\n  \"supplierType\": \"\",\n  \"primaryContact\": \"\",\n  \"serviceDescription\": \"\",\n  \"estimatedAnnualSpend\": 0,\n  \"currency\": \"\",\n  \"paymentTerms\": \"\",\n  \"requestedOnboardingDate\": \"\",\n  \"requestName\": \"\",\n  \"mandatoryInformationComplete\": true,\n  \"missingInformation\": []\n}",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are an enterprise Supplier Onboarding Agent.\r\n\r\nYour responsibility is to analyze an unstructured supplier onboarding request received through email and convert it into structured supplier information.\r\n\r\nExtract the following information:\r\n\r\n- Supplier Name\r\n- Supplier Type\r\n- Primary Contact\r\n- Service Description\r\n- Estimated Annual Spend\r\n- Currency\r\n- Payment Terms\r\n- Requested Onboarding Date\r\n- Requester Name\r\n\r\nAlso determine whether all mandatory information required to initiate supplier onboarding is available.\r\n\r\nMandatory information:\r\n1. Supplier Name\r\n2. Supplier Type or Service Description\r\n3. Primary Contact\r\n4. Estimated Annual Spend\r\n5. Currency\r\n6. Payment Terms\r\n7. Requester\r\n\r\nRules:\r\n- Do not invent information.\r\n- If information is missing, return null.\r\n- Identify missing mandatory fields.\r\n- Return structured output.\n\nReturn ONLY a valid JSON object.\n\nDo not include:\n- Markdown\n- ```json\n- Explanations\n- Introductory text\n- Any text before or after the JSON\n\nUse exactly this structure:\n\n{\n  \"supplierName\": \"\",\n  \"supplierType\": \"\",\n  \"primaryContact\": \"\",\n  \"serviceDescription\": \"\",\n  \"estimatedAnnualSpend\": 0,\n  \"currency\": \"\",\n  \"paymentTerms\": \"\",\n  \"requestedOnboardingDate\": \"\",\n  \"requestName\": \"\",\n  \"mandatoryInformationComplete\": true,\n  \"missingInformation\": []\n}"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Analyze this supplier onboarding request.\nEmail Body:{{input.getNewestEmail1__output__Body}}",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Analyze this supplier onboarding request.\nEmail Body:"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.getNewestEmail1__output__Body"
+        }
+      ]
+    }
+  ],
+  "projectId": "fff5d099-4661-47e8-9bb1-65da1be99303",
+  "id": "fff5d099-4661-47e8-9bb1-65da1be99303",
+  "name": "Supplier Request Analyzer"
+}

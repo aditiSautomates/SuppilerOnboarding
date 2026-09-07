@@ -1,0 +1,55 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "anthropic.claude-sonnet-5",
+    "maxTokens": 16384,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "string"
+      }
+    }
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "showProjectCreationExperience": false
+  },
+  "type": "lowCode",
+  "guardrails": [],
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an invoice review assistant.\r\n\r\nYour responsibility is to evaluate invoices based only on the business rule provided by the user.\r\n\r\nAlways:\r\n1. Identify the Total Amount.\r\n2. Compare it with 3000.\r\n3. If Total Amount > 3000, return APPROVE.\r\n4. If Total Amount <= 3000, return REJECT.\r\n5. Provide a short reason for the decision.\r\n\r\nDo not invent missing invoice information.\r\nKeep your response concise and structured.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are an invoice review assistant.\r\n\r\nYour responsibility is to evaluate invoices based only on the business rule provided by the user.\r\n\r\nAlways:\r\n1. Identify the Total Amount.\r\n2. Compare it with 3000.\r\n3. If Total Amount > 3000, return APPROVE.\r\n4. If Total Amount <= 3000, return REJECT.\r\n5. Provide a short reason for the decision.\r\n\r\nDo not invent missing invoice information.\r\nKeep your response concise and structured."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Review the invoice information provided in the input.\r\n\r\nCheck the invoice Total Amount.\r\n\r\nBusiness rule:\r\n- If Total Amount is greater than 3000, approve the invoice.\r\n- If Total Amount is 3000 or less, reject the invoice and send it for Manager Validation using a Quick Form.\r\n\r\nReturn the result in exactly this format:\r\n\r\nDecision: APPROVE or REJECT\r\nTotal Amount: <amount>\r\nReason: <short explanation>\r\n\r\nDo not make any other business decisions. Only apply the Total Amount > 3000 rule.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Review the invoice information provided in the input.\r\n\r\nCheck the invoice Total Amount.\r\n\r\nBusiness rule:\r\n- If Total Amount is greater than 3000, approve the invoice.\r\n- If Total Amount is 3000 or less, reject the invoice and send it for Manager Validation using a Quick Form.\r\n\r\nReturn the result in exactly this format:\r\n\r\nDecision: APPROVE or REJECT\r\nTotal Amount: <amount>\r\nReason: <short explanation>\r\n\r\nDo not make any other business decisions. Only apply the Total Amount > 3000 rule."
+        }
+      ]
+    }
+  ],
+  "projectId": "2ec8c9ca-c12d-4822-a428-c43dbe121349",
+  "id": "2ec8c9ca-c12d-4822-a428-c43dbe121349",
+  "name": "Autonomous agent"
+}
